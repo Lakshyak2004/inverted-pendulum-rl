@@ -5,7 +5,7 @@ from gymnasium.envs.classic_control.cartpole import CartPoleEnv
 
 class SwingUpCartPole(CartPoleEnv):
     """
-    Custom CartPole environment for swing-up task.
+    CartPole environment for swing-up task.
     """
 
     def reset(self, seed=None, options=None):

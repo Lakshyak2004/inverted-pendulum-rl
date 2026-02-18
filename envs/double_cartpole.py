@@ -15,7 +15,7 @@ class DoubleCartPole(gym.Env):
     def __init__(self):
         super().__init__()
 
-        # Physics constants
+        # Physics
         self.gravity = 9.8
         self.mass_cart = 1.0
         self.mass_pole = 0.1
@@ -41,7 +41,7 @@ class DoubleCartPole(gym.Env):
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
 
-        # Start both poles downward
+        # Both poles starts downward
         self.state = np.array([
             0.0,            # x
             0.0,            # x_dot
@@ -58,7 +58,7 @@ class DoubleCartPole(gym.Env):
         x, x_dot, t1, t1_dot, t2, t2_dot = self.state
         force = float(action[0])
 
-        # Very simplified coupled dynamics (sufficient for RL)
+        # Coupled dynamics
         x_ddot = force / self.mass_cart
 
         t1_ddot = (
@@ -85,7 +85,7 @@ class DoubleCartPole(gym.Env):
             [x, x_dot, t1, t1_dot, t2, t2_dot], dtype=np.float32
         )
 
-        # Reward: both poles upright
+        # Reward if both poles are upright
         reward = (
     		1.5 * np.cos(t1)
     		+ 1.5 * np.cos(t2)

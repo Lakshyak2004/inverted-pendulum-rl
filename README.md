@@ -4,11 +4,9 @@
 
 \## Overview
 
-This project implements a reinforcement learning solution for the classical inverted pendulum control problem, focusing on swing-up and stabilization using Proximal Policy Optimization (PPO).
+This project implements a RL solution for the classical inverted pendulum control problem, focusing on swing-up and stabilization using Proximal Policy Optimization (PPO).
 
-
-
-The implementation is CPU-based and emphasizes algorithmic correctness, reward design, and experimental analysis.
+Due to strict system-level constraints (GPU drivers, GLIBC compatibility), a lightweight, reproducible CPU-based reinforcement learning pipeline was implemented to rigorously solve the control problem. The implementation is CPU-based and emphasizes algorithmic correctness, reward design, and experimental analysis.
 
 
 
